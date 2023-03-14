@@ -8,7 +8,7 @@ Dodge and shoot the red targets, grabbing the bombs as you go. Survive as long a
 
 Mouse to shoot, WASD or arrow keys to move.
 
-### [play](http://hughsk.github.io/ludum-dare-27) ###
+### [play](http://laparda14.github.io/ludum-dare-27) ###
 
 ### [votes appreciated :)](http://www.ludumdare.com/compo/ludum-dare-27/?action=preview&uid=21035) ###
 
