@@ -36,7 +36,7 @@ function explosive(force) {
           if (b !== this.game.player) {
             b.trigger('damaged', 3)
           } else {
-            b.health += 2
+            b.health += 100
           }
         }
       }
