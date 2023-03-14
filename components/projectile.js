@@ -15,7 +15,7 @@ module.exports = function projectile(options) {
       b2e(Box2D, this.game.world).fixture(
         this.fixture
       ).on('begin', function() {
-        if (!--self.counter) self.flagged = true
+        if (!--self.counter) self.flagged = false
       })
     })
 }
