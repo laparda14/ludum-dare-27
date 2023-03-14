@@ -81,7 +81,7 @@ var player = bs.component([
     this.body.SetActive(true)
     this.body.SetAwake(true)
     this.health = this.health < 0 ? 0
-      : (this.health < 15 ? this.health : 100)
+      : (this.health < 100 ? this.health : 100)
 
     var xspd = this.body.m_linearVelocity.x =
         this.controls.left  && !this.blockedLeft  ? -14
@@ -136,10 +136,6 @@ var player = bs.component([
       ,  30 + this.pop * 2
     )
     ctx.restore()
-  })
-  .on('damaged', function(damage) {
-    this.flinch = 1
-    if (this.health < 1) this.game.restart()
   })
 
 module.exports = bs.define()
