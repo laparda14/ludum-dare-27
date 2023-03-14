@@ -23,8 +23,8 @@ var player = bs.component([
   .needs('attached')
   .needs('controllable')
   .on('init', function() {
-    var x = this.game.width / 60
-    var y = this.game.height / 60
+    var x = this.game.width / 100
+    var y = this.game.height / 100
 
     var def = new b2BodyDef
     def.position = new b2Vec2(20, 0)
