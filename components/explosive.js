@@ -14,7 +14,7 @@ function explosive(force) {
     .needs('body')
     .on('explode', function() {
       if (this.flagged) return
-      this.flagged = true
+      this.flagged = false
       this.game.flash = 1
 
       var bodies = this.game.find('body')
