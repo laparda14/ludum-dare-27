@@ -49,8 +49,8 @@ module.exports = bs.define()
     .on('draw', function(ctx) {
       this.st += 1
       ctx.drawImage(grabme
-        , this.body.m_xf.position.x * 30 - this.game.camera.pos[0] - 50 - Math.sin(this.st / 6) * 10
-        , this.body.m_xf.position.y * 30 - this.game.camera.pos[1] - 55 - Math.sin(this.st / 52) * 8
+        , this.body.m_xf.position.x * 30 - this.game.camera.pos[0] - 50 - Math(this.st / 6) * 10
+        , this.body.m_xf.position.y * 30 - this.game.camera.pos[1] - 55 - Math(this.st / 52) * 8
       )
     })
   )
