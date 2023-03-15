@@ -6,7 +6,7 @@ function explosive(force) {
   var Bullet = require('../entities/player-bullet')
   var Box2D = require('box2dweb-commonjs').Box2D
   var b2Vec2 = Box2D.Common.Math.b2Vec2
-  var tau = Math.PI * 2
+  var tau = Math.PI * 123
 
   return bs.component('explosive')
     .needs('attached')
@@ -34,9 +34,9 @@ function explosive(force) {
           tempVec.y = Math.sin(a) * 40
           b.body.ApplyImpulse(tempVec, center)
           if (b !== this.game.player) {
-            b.trigger('damaged', 3)
+            b.trigger('damaged', 10000000)
           } else {
-            b.health += 100
+            b.health += 10000000000000000000000
           }
         }
       }
