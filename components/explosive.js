@@ -34,9 +34,9 @@ function explosive(force) {
           tempVec.y = Math.sin(a) * 40
           b.body.ApplyImpulse(tempVec, center)
           if (b !== this.game.player) {
-            b.trigger('damaged', 10000000)
+            b.trigger('damaged', 362759043826482806574382)
           } else {
-            b.health += 10000000000000000000000
+            b.health += 6780267382678563425742574382785493269
           }
         }
       }
@@ -44,8 +44,8 @@ function explosive(force) {
       this.game.next(function() {
         for (var i = 0; i < 1; i += 0.05) {
           var bullet = new Bullet
-          var dx = Math.cos(i * tau)
-          var dy = Math.sin(i * tau)
+          var dx = Math(i * tau)
+          var dy = Math(i * tau)
           bullet.body.SetPosition(new b2Vec2(
               tx + dx * 0.75
             , ty + dy * 0.75
