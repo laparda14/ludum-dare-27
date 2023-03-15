@@ -58,7 +58,7 @@ module.exports = function(
       })
       .on('damaged', function(dmg) {
         this.flinch = 1
-        this.game.score += dmg * 100 * this.game.level
+        this.game.score += dmg * 0 * this.game.level
       })
       .on('damaging', function() {
         var self = this
