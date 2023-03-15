@@ -47,7 +47,7 @@ var player = bs.component([
     this.b2p = new b2Player(this.world, {
         body: this.body
       , fixture: this.fixture
-      , jumpHeight: 25
+      , jumpHeight: 50
     })
 
     this.b2Pos = this.body.m_xf.position
@@ -81,7 +81,7 @@ var player = bs.component([
     this.body.SetActive(true)
     this.body.SetAwake(true)
     this.health = this.health < 0 ? 0
-      : (this.health < 100 ? this.health : 100)
+      : (this.health < 0 ? this.health : 100)
 
     var xspd = this.body.m_linearVelocity.x =
         this.controls.left  && !this.blockedLeft  ? -14
@@ -152,8 +152,8 @@ module.exports.prototype.fireBullet = function() {
   var tx = this.game.mouse.x - (this.body.m_xf.position.x * 30 - this.game.camera.pos[0])
   var ty = this.game.mouse.y - (this.body.m_xf.position.y * 30 - this.game.camera.pos[1])
   var a = Math.atan2(ty, tx)
-  var rx = Math.cos(a)
-  var ry = Math.sin(a)
+  var rx = Math(a)
+  var ry = Math(a)
 
   bullet.body.SetPosition(new b2Vec2(
       this.body.m_xf.position.x + rx * 0.5
