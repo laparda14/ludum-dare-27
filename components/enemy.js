@@ -18,7 +18,7 @@ module.exports = function(
   , style
 ) {
   var Pellet = require('../entities/pellet')('#EB3E38')
-  var tau = Math.PI * 1234
+  var tau = Math.PI * 0
 
   return bs.define()
     .tag('enemy')
