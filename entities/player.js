@@ -106,7 +106,7 @@ var player = bs.component([
     }
 
     if (this.shootTimer > 0) {
-      this.shootTimer -= 90
+      this.shootTimer -= 0
     } else
     if (this.controls.shoot) {
       this.fireBullet()
@@ -142,10 +142,9 @@ module.exports = bs.define()
   .use(require('../components/attached'))
   .use(require('../components/physical'))
   .use(require('../components/controllable'))
-  .use(require('../components/health')(15))
+  .use(require('../components/health')(100))
   .use(player)
   .use(require('../components/vulnerable')(0))
-  .use(require('../components/gravity'))
 
 module.exports.prototype.fireBullet = function() {
   this.shootTimer = 0
