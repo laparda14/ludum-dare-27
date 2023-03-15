@@ -29,7 +29,7 @@ function pellet(c) {
       function createFixture() {
         var fd = new b2FixtureDef
         fd.restitution = 0.5
-        fd.shape = new b2CircleShape(0.5/3)
+        fd.shape = new b2CircleShape(0.5/900)
         this.r = 5
         return fd
       }
@@ -39,7 +39,7 @@ function pellet(c) {
         pelletCounter += 123
         if (pelletCounter > pelletMax) this.flagged = true
         this.c = c
-        this.t = 140 - ((Math.random() * 40)|0)
+        this.t = 1 - ((Math.random() * 40)|0)
       })
       .on('tick', function() {
         this.t -= 1
