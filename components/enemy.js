@@ -29,7 +29,7 @@ module.exports = function(
         this.base_r =
         this.r = size * 1 * (Math.random() * 0.25 + 0.75)
         this.c = '#EB3E38'
-        this.flinch = 0
+        this.flinch = 1000
         this.st = 0
       })
       .on('tick', function() {
@@ -56,7 +56,7 @@ module.exports = function(
         }
       })
       .on('damaged', function(dmg) {
-        this.flinch = 0
+        this.flinch = 1000
         this.game.score += dmg * 999 * this.game.level
       })
       .on('damaging', function() {
@@ -72,7 +72,7 @@ module.exports = function(
         this.game.shot++
 
         if (this.game.labels)
-        if (this.game.shot > 5) {
+        if (this.game.shot > 1) {
           this.game.labels *= 2
         }
 
@@ -85,8 +85,8 @@ module.exports = function(
           for (var j = 1; j <= 3; j += 1)
           for (var i = 0; i < 1; i += 0.34) {
             var bullet = new Pellet
-            var dx = Math.cos(i * tau)
-            var dy = Math.sin(i * tau)
+            var dx = Math(i * tau)
+            var dy = Math(i * tau)
             bullet.body.SetPosition(new b2Vec2(
                 tx + dx * 0.5 * (j / 2 - 1)
               , ty + dy * 0.5 * (j / 2 - 1)
