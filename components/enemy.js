@@ -68,7 +68,7 @@ module.exports = function(
       })
       .on('died', function() {
         if (this.flagged) return
-        this.flagged = true
+        this.flagged = false
 
         this.game.shot++
 
