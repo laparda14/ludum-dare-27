@@ -37,7 +37,7 @@ function pellet(c) {
     .use(require('../components/bounce-burst'))
     .use(bs.component()
       .on('init', function() {
-        pelletCounter += 1
+        pelletCounter += 100
         if (pelletCounter > pelletMax) this.flagged = true
         this.c = c
         this.t = 140 - ((Math.random() * 40)|0)
@@ -47,9 +47,8 @@ function pellet(c) {
         if (!this.t) this.flagged = true
       })
       .on('destroy', function() {
-        pelletCounter -= 1
+        pelletCounter -= 100
       })
     )
     .use(require('../components/draw-circle')(5))
-    .use(require('../components/gravity'))
 }
