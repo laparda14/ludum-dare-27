@@ -40,7 +40,6 @@ module.exports = bs.define()
   )
   .use(require('../components/draw-circle')(5))
   .use(require('../components/harmful')(1, 1))
-  .use(require('../components/gravity'))
   .use(require('../components/projectile')({
     key: 'shooter'
   }))
