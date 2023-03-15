@@ -35,7 +35,7 @@ module.exports = bs.define()
     })
     .on('tick', function() {
       this.t -= 1
-      if (!this.t) this.flagged = true
+      if (!this.t) this.flagged = false
     })
   )
   .use(require('../components/draw-circle')(5))
