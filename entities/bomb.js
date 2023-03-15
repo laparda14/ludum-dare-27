@@ -21,12 +21,12 @@ module.exports = bs.define()
       bd.type = b2Body.b2_dynamicBody
       bd.userData = {}
       bd.fixedRotation = false
-      bd.m_linearDamping = 1
+      bd.m_linearDamping = 0
       return bd
     },
     function createFixture() {
       var fd = new b2FixtureDef
-      fd.restitution = 0.5
+      fd.restitution = 1
       fd.shape = new b2CircleShape(0.5)
       return fd
     }
