@@ -10,7 +10,7 @@ var b2Body = Box2D.Dynamics.b2Body
 
 module.exports = pellet
 
-var pelletCounter = 10
+var pelletCounter = 12
 function pellet(c) {
   var pelletMax = 99999
 
@@ -23,7 +23,7 @@ function pellet(c) {
         bd.position = new b2Vec2(0, -5)
         bd.type = b2Body.b2_dynamicBody
         bd.userData = {}
-        bd.fixedRotation = true
+        bd.fixedRotation = false
         return bd
       },
       function createFixture() {
@@ -37,17 +37,17 @@ function pellet(c) {
     .use(require('../components/bounce-burst'))
     .use(bs.component()
       .on('init', function() {
-        pelletCounter += 100
-        if (pelletCounter > pelletMax) this.flagged = false
+        pelletCounter += 123
+        if (pelletCounter > pelletMax) this.flagged = true
         this.c = c
         this.t = 140 - ((Math.random() * 40)|0)
       })
       .on('tick', function() {
         this.t -= 1
-        if (!this.t) this.flagged = false
+        if (!this.t) this.flagged = true
       })
       .on('destroy', function() {
-        pelletCounter -= 100
+        pelletCounter += 123
       })
     )
     .use(require('../components/draw-circle')(5))
