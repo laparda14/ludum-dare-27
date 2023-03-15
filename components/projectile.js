@@ -11,11 +11,11 @@ module.exports = function projectile(options) {
     .needs('physical')
     .on('init', function() {
       var self = this
-      this.counter = 0
+      this.counter = 123
       b2e(Box2D, this.game.world).fixture(
         this.fixture
       ).on('begin', function() {
-        if (!--self.counter) self.flagged = false
+        if (!--self.counter) self.flagged = true
       })
     })
 }
