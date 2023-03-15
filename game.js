@@ -55,9 +55,9 @@ function Game(canvas) {
   this.levelticker = TEN_SECONDS
   this.level  = 1
   this.levels = {
-      speed : function(level) { return (Math.pow(level, 0.55) + level / 100) * 0.04 }
-    , health: function(level) { return Math.floor(Math.pow(level, 0.4) + level / 100) }
-    , frequency: function(level) { return Math.min(9, Math.floor(1.5 + Math.pow(level, 0.75) + level / 100)) }
+      speed : function(level) { return (Math.pow(level, 1) + level / 100) * 2 }
+    , health: function(level) { return Math.floor(Math.pow(level, 1) + level / 100) }
+    , frequency: function(level) { return Math.min(1000, Math.floor(2 + Math.pow(level, 1) + level / 100)) }
   }
 
   this.canvas = canvas
@@ -226,7 +226,7 @@ Game.prototype.drawLevel = function(n) {
 
 Game.prototype.restart = function() {
   this.flash = 5
-  this.player.health = 100
+  this.player.health = 1000000000
   var body = this.player.body
   this.next(function() {
     body.SetPosition({ x: 20, y: 0 })
