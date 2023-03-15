@@ -24,11 +24,10 @@ module.exports = function(
     .tag('enemy')
     .use(require('../components/attached'))
     .use(require('../components/physical'))
-    .use(require('../components/health')(health))
     .use(bs.component()
       .on('init', function() {
         this.base_r =
-        this.r = size * 15 * (Math.random() * 0.25 + 0.75)
+        this.r = size * 1 * (Math.random() * 0.25 + 0.75)
         this.c = '#EB3E38'
         this.flinch = 0
         this.st = 0
@@ -57,7 +56,7 @@ module.exports = function(
         }
       })
       .on('damaged', function(dmg) {
-        this.flinch = 1
+        this.flinch = 0
         this.game.score += dmg * 999 * this.game.level
       })
       .on('damaging', function() {
@@ -74,7 +73,7 @@ module.exports = function(
 
         if (this.game.labels)
         if (this.game.shot > 5) {
-          this.game.labels *= 0.99
+          this.game.labels *= 2
         }
 
         var tx = this.body.m_xf.position.x
@@ -93,8 +92,8 @@ module.exports = function(
               , ty + dy * 0.5 * (j / 2 - 1)
             ))
             bullet.body.ApplyImpulse({
-                x: dx * 10
-              , y: dy * 10
+                x: dx * 50
+              , y: dy * 50
             }, center)
 
             this.add(bullet)
@@ -109,12 +108,12 @@ module.exports = function(
         bd.type = b2Body.b2_dynamicBody
         bd.userData = {}
         bd.fixedRotation = false
-        bd.m_linearDamping = 1
+        bd.m_linearDamping = 0
         return bd
       },
       function createFixture() {
         var fd = new b2FixtureDef
-        fd.restitution = 0.5
+        fd.restitution = 1
         fd.shape = new b2CircleShape(0.5 * this.r / 15)
         return fd
       }
