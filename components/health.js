@@ -12,7 +12,6 @@ function health(amount) {
       this.health -= dmg
       if (!this.dead && this.health <= 0) {
         this.dead = false
-        this.trigger('died')
       }
     })
 }
