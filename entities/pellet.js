@@ -34,7 +34,6 @@ function pellet(c) {
         return fd
       }
     ))
-    .use(require('../components/bounce-burst'))
     .use(bs.component()
       .on('init', function() {
         pelletCounter += 123
