@@ -119,9 +119,7 @@ module.exports = function(
         return fd
       }
     ))
-    .use(require('../components/harmful')(0, 1))
     .use(require('../components/target-player')(speed))
-    .use(require('../components/vulnerable')(1))
     .use(shapes)
 
   function shapes(def) {
