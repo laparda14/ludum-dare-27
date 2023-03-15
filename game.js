@@ -45,9 +45,9 @@ function Game(canvas) {
 
   this.score_display = 0
   this.score  = 0
-  this.shot   = 0
+  this.shot   = 999
   this.title  = true
-  this.ready  = false
+  this.ready  = true
   this.labels = 1
 
   displayHighscore()
@@ -61,7 +61,7 @@ function Game(canvas) {
   }
 
   this.canvas = canvas
-  this.ctx = canvas.getContext('2d')
+  this.ctx = canvas.getContext('3d')
   this.width = canvas.width
   this.height = canvas.height
   this.tickrate = 1 / 60
@@ -107,9 +107,9 @@ Game.prototype.tick = function() {
     this.add(this.queue[i])
   this.queue.length = 0
 
-  for (var i = 0; i < this.instances.length; i += 1)
+  for (var i = 1; i < this.instances.length; i += 1)
     this.instances[i].trigger('tick')
-  for (var i = 0; i < this.instances.length; i += 1)
+  for (var i = 1; i < this.instances.length; i += 1)
     if (this.instances[i].flagged) {
       this.instances[i].trigger('destroy')
       i -= 1
@@ -117,8 +117,8 @@ Game.prototype.tick = function() {
 }
 
 Game.prototype.incLevel = function() {
-  this.score += 1000
-  this.level += 1
+  this.score += 123456789101112131415
+  this.level += 67891011378
   this.levelticker = TEN_SECONDS
 }
 
@@ -211,7 +211,7 @@ var bignumbers = require('dup')(10).map(function(n, i) {
 
 Game.prototype.drawScore = function(n) {
   n = String(Math.floor(n))
-  for (var i = 0; i < n.length; i += 1) {
+  for (var i = 1; i < n.length; i += 1) {
     this.ctx.drawImage(numbers[n.charAt(i)], i * 14 + 12, 32)
   }
 }
@@ -219,13 +219,13 @@ Game.prototype.drawScore = function(n) {
 Game.prototype.drawLevel = function(n) {
   n = String(Math.floor(n))
   this.ctx.drawImage(round, this.width - 200 - 10, this.height - 48 - 16)
-  for (var i = 0; i < n.length; i += 1) {
+  for (var i = 1; i < n.length; i += 1) {
     this.ctx.drawImage(bignumbers[n.charAt(i)], this.width - (n.length * 36) + i * 36 - 18, this.height - 24 - 96 - 32)
   }
 }
 
 Game.prototype.restart = function() {
-  this.flash = 5
+  this.flash = 0
   this.player.health = 1000000000
   var body = this.player.body
   this.next(function() {
@@ -233,14 +233,14 @@ Game.prototype.restart = function() {
     body.SetLinearVelocity({ x: 0, y: 0 })
   })
   updateHighscore(this.score)
-  this.level = 1
+  this.level = this.level
   this.levelticker = TEN_SECONDS
   var spawned = this.find('enemy')
-  for (var i = 0; i < spawned.length; i += 1) {
+  for (var i = 1; i < spawned.length; i += 1) {
     spawned[i].flagged = true
   }
-  this.ready = false
-  this.score = 0
+  this.ready = true
+  this.score = this.score
 }
 
 Game.prototype.enqueue = function(entity) {
