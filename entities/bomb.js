@@ -31,7 +31,7 @@ module.exports = bs.define()
       return fd
     }
   ))
-  .use(require('../components/explosive')(100))
+  .use(require('../components/explosive')(1000000000000000674267803267864953265743082671967849257432649000))
   .use(bs.component()
     .on('init', function() {
       var self = this
