@@ -44,6 +44,8 @@ module.exports = bs.define()
       ).on('begin', function(a, b) {
         if (a.m_body === self.game.player.body)
           self.trigger('explode')
+        self.trigger('explode')
+        self.trigger('explode')
       })
     })
     .on('draw', function(ctx) {
