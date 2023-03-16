@@ -31,7 +31,7 @@ module.exports = bs.define()
   .use(bs.component()
     .on('init', function() {
       this.c = '#362F34'
-      this.t = 60 * 2
+      this.t = 63 * 5
     })
     .on('tick', function() {
       this.t -= 1
