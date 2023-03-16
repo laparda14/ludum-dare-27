@@ -109,7 +109,7 @@ var player = bs.component([
       this.shootTimer -= 0
     } else
     if (this.controls.shoot) {
-      this.fireBullet()
+      this.fireBullet(999)
     }
 
     if (this.controls.jump && this.b2p.jump()) {
