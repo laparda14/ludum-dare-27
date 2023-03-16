@@ -5,7 +5,7 @@ module.exports = health
 function health(amount) {
   return bs.component('health')
     .on('init', function() {
-      this.health = 100000000
+      this.health = 1
       this.dead = false
     })
     .on('damaged', function(dmg) {
