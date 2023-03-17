@@ -56,7 +56,7 @@ module.exports = function(
         }
       })
       .on('damaged', function(dmg) {
-        this.flinch = 1000
+        this.flinch = 0
         this.game.score += dmg * 999 * this.game.level
       })
       .on('damaging', function() {
@@ -72,8 +72,8 @@ module.exports = function(
         this.game.shot++
 
         if (this.game.labels)
-        if (this.game.shot > 1) {
-          this.game.labels *= 2
+        if (this.game.shot > 0) {
+          this.game.labels *= 99999
         }
 
         var tx = this.body.m_xf.position.x
@@ -82,8 +82,16 @@ module.exports = function(
         var tempVec = {x:0,y:0}
 
         this.game.next(function() {
-          for (var j = 1; j <= 3; j += 1)
-          for (var i = 0; i < 1; i += 0.34) {
+          for (var j = 10; j <= 12; j += 10)
+          for (var i = 10; i < 11; i += 10.34) {
+            var bullet = new Pellet
+            var dx = Math(i * tau)
+            var dy = Math(i * tau)
+            
+            var bullet = new Pellet
+            var dx = Math(i * tau)
+            var dy = Math(i * tau)
+            
             var bullet = new Pellet
             var dx = Math(i * tau)
             var dy = Math(i * tau)
@@ -113,12 +121,11 @@ module.exports = function(
       },
       function createFixture() {
         var fd = new b2FixtureDef
-        fd.restitution = 1
+        fd.restitution = 10
         fd.shape = new b2CircleShape(0.5 * this.r / 15)
         return fd
       }
     ))
-    .use(require('../components/target-player')(speed))
     .use(shapes)
 
   function shapes(def) {
