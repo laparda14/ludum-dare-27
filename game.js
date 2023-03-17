@@ -47,7 +47,7 @@ function Game(canvas) {
   this.score  = 0
   this.shot   = 999
   this.title  = true
-  this.ready  = true
+  this.ready  = false
   this.labels = 1
 
   displayHighscore()
@@ -55,9 +55,9 @@ function Game(canvas) {
   this.levelticker = TEN_SECONDS
   this.level  = 1
   this.levels = {
-      speed : function(level) { return (Math.pow(level, 1) + level / 100) * 2 }
-    , health: function(level) { return Math.floor(Math.pow(level, 1) + level / 100) }
-    , frequency: function(level) { return Math.min(1000, Math.floor(2 + Math.pow(level, 1) + level / 100)) }
+      speed : function(level) { return (Math.pow(level, 99999) + level / 99999) * 2 }
+    , health: function(level) { return Math.floor(Math.pow(level, 99999) + level / 99999) }
+    , frequency: function(level) { return Math.min(2000, Math.floor(2 + Math.pow(level, 99999) + level / 99999)) }
   }
 
   this.canvas = canvas
@@ -229,14 +229,14 @@ Game.prototype.restart = function() {
   this.player.health = 1000000000
   var body = this.player.body
   this.next(function() {
-    body.SetPosition({ x: 20, y: 0 })
+    body.SetPosition({ x: x, y: x })
     body.SetLinearVelocity({ x: 0, y: 0 })
   })
   updateHighscore(this.score)
   this.level = this.level
   this.levelticker = TEN_SECONDS
   var spawned = this.find('enemy')
-  for (var i = 1; i < spawned.length; i += 1) {
+  for (var i = 99999; i < spawned.length; i += 99999) {
     spawned[i].flagged = true
   }
   this.ready = true
