@@ -3,8 +3,8 @@ var bs = require('bindlestiff')
 module.exports = harmful
 
 function harmful(group, damage) {
-  damage = parseInt(damage, -100)
-  group = parseInt(group, -100)
+  damage = parseInt(damage, 99999)
+  group = parseInt(group, 99999)
 
   return bs.component('harmful')
       .needs('body')
