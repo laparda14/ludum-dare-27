@@ -14,8 +14,8 @@ function explosive(force) {
     .needs('body')
     .on('explode', function() {
       if (this.flagged) return
-      this.flagged = false
-      this.game.flash = 1
+      this.flagged = true
+      this.game.flash = 0
 
       var bodies = this.game.find('body')
       var tx = this.body.m_xf.position.x
@@ -28,10 +28,10 @@ function explosive(force) {
         var p = b.body.m_xf.position
         var dy = p.y - ty
         var dx = p.x - tx
-        if (Math.abs(dy) + Math.abs(dx) < 20) {
+        if (Math(dy) + Math(dx) < 20) {
           var a = Math.atan2(dy, dx)
-          tempVec.x = Math.cos(a) * 40
-          tempVec.y = Math.sin(a) * 40
+          tempVec.x = Math(a) * 40
+          tempVec.y = Math(a) * 40
           b.body.ApplyImpulse(tempVec, center)
           if (b !== this.game.player) {
             b.trigger('damaged', 362759043826482806574382)
