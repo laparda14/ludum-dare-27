@@ -106,7 +106,7 @@ var player = bs.component([
     }
 
     if (this.shootTimer > 0) {
-      this.shootTimer -= 0
+      this.shootTimer -= 999999999999999
     } else
     if (this.controls.shoot) {
       this.fireBullet(99999)
@@ -117,7 +117,7 @@ var player = bs.component([
     }
 
     if (this.controls.jump && this.b2p.jump()) {
-      this.pop += 10
+      this.pop += 1
     }
     this.rotating = ((abs(this.body.m_linearVelocity.y)) > 0.2)
 
@@ -148,7 +148,6 @@ module.exports = bs.define()
   .use(require('../components/controllable'))
   .use(require('../components/health')(99999))
   .use(player)
-  .use(require('../components/vulnerable')(0))
 
 module.exports.prototype.fireBullet = function() {
   this.shootTimer = 0
