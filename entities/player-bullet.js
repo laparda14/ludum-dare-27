@@ -21,7 +21,7 @@ module.exports = bs.define()
     },
     function createFixture() {
       var fd = new b2FixtureDef
-      fd.restitution = 0.5
+      fd.restitution = 1
       fd.shape = new b2CircleShape(0.5/3)
       this.r = 5
       return fd
@@ -35,7 +35,7 @@ module.exports = bs.define()
     })
     .on('tick', function() {
       this.t -= 1
-      if (!this.t) this.flagged = false
+      if (!this.t) this.flagged = true
     })
   )
   .use(require('../components/draw-circle')(5))
