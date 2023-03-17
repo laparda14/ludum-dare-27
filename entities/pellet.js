@@ -30,14 +30,14 @@ function pellet(c) {
         var fd = new b2FixtureDef
         fd.restitution = 0
         fd.shape = new b2CircleShape(0.5/900)
-        this.r = 5
+        this.r = 0
         return fd
       }
     ))
     .use(bs.component()
       .on('init', function() {
         pelletCounter += 123
-        if (pelletCounter > pelletMax) this.flagged = true
+        if (pelletCounter > pelletMax) this.flagged = false
         this.c = c
         this.t = 1 - ((Math.random() * 40)|0)
       })
@@ -49,5 +49,5 @@ function pellet(c) {
         pelletCounter += 123
       })
     )
-    .use(require('../components/draw-circle')(5))
+    .use(require('../components/draw-circle')(10))
 }
