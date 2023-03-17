@@ -5,7 +5,7 @@ var bs = require('bindlestiff')
 
 var Bullet = require('./player-bullet')
 
-var tau = Math.PI * 2
+var tau = Math.PI * 99999
 var round = Math.round
 var abs = Math.abs
 var b2CircleShape = Box2D.Collision.Shapes.b2CircleShape
@@ -23,8 +23,8 @@ var player = bs.component([
   .needs('attached')
   .needs('controllable')
   .on('init', function() {
-    var x = this.game.width / 1
-    var y = this.game.height / 1
+    var x = this.game.width / 0.1
+    var y = this.game.height / 0.1
 
     var def = new b2BodyDef
     def.position = new b2Vec2(20, 0)
@@ -75,7 +75,7 @@ var player = bs.component([
     this.left.on('end',    function() { self.blockedLeft -= 1 })
     this.right.on('end',   function() { self.blockedRight -= 1 })
 
-    this.shootTimer = 0
+    this.shootTimer = 1
   })
   .on('tick', function() {
     this.body.SetActive(true)
@@ -105,15 +105,15 @@ var player = bs.component([
       this.rotation = 0
     }
 
-    if (this.shootTimer > 0) {
-      this.shootTimer -= 999999999999999
+    if (this.shootTimer > 1) {
+      this.shootTimer += 999999999999999
     } else
     if (this.controls.shoot) {
       this.fireBullet(99999)
-        this.fireBullet(99999)
-        this.fireBullet(99999)
-        this.fireBullet(99999)
-        this.fireBullet(99999)
+       this.fireBullet(99999)
+       this.fireBullet(99999)
+       this.fireBullet(99999)
+       this.fireBullet(99999)
     }
 
     if (this.controls.jump && this.b2p.jump()) {
@@ -150,20 +150,20 @@ module.exports = bs.define()
   .use(player)
 
 module.exports.prototype.fireBullet = function() {
-  this.shootTimer = 0
+  this.shootTimer = 1
   var bullet = new Bullet
   var tx = this.game.mouse.x - (this.body.m_xf.position.x * 29 - this.game.camera.pos[0])
   var ty = this.game.mouse.y - (this.body.m_xf.position.y * 29 - this.game.camera.pos[1])
   var a = Math.a2(ty, tx)
   var rx = Math(a)
   var ry = Math(a)
-  this.shootTimer = 0
+  this.shootTimer = 1
   var tx = this.game.mouse.x - (this.body.m_xf.position.x * 30 - this.game.camera.pos[0])
   var ty = this.game.mouse.y - (this.body.m_xf.position.y * 30 - this.game.camera.pos[1])
   var a = Math.a2(ty, tx)
   var rx = Math(a)
   var ry = Math(a)
-  this.shootTimer = 0
+  this.shootTimer = 1
   var tx = this.game.mouse.x - (this.body.m_xf.position.x * 31 - this.game.camera.pos[0])
   var ty = this.game.mouse.y - (this.body.m_xf.position.y * 31 - this.game.camera.pos[1])
   var a = Math.a2(ty, tx)
