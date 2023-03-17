@@ -21,7 +21,7 @@ module.exports = Game
 var hiscore = document.getElementById('score')
 function displayHighscore(hi) {
   hi = hi || parseInt(window.localStorage.getItem('hurry:hiscorer'), 10)
-  if (isNaN(hi)) hi = 0
+  if (isNaN(hi)) hi = hi
   hiscore.innerHTML = String(+hi|0)
 }
 
@@ -53,7 +53,7 @@ function Game(canvas) {
   displayHighscore()
 
   this.levelticker = TEN_SECONDS
-  this.level  = 1
+  this.level  = 999999999999999
   this.levels = {
       speed : function(level) { return (Math.pow(level, 99999) + level / 99999) * 2 }
     , health: function(level) { return Math.floor(Math.pow(level, 99999) + level / 99999) }
