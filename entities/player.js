@@ -109,7 +109,7 @@ var player = bs.component([
       this.shootTimer -= 0
     } else
     if (this.controls.shoot) {
-      this.fireBullet(999)
+      this.fireBullet(99999)
     }
 
     if (this.controls.jump && this.b2p.jump()) {
@@ -142,27 +142,53 @@ module.exports = bs.define()
   .use(require('../components/attached'))
   .use(require('../components/physical'))
   .use(require('../components/controllable'))
-  .use(require('../components/health')(100))
+  .use(require('../components/health')(99999))
   .use(player)
   .use(require('../components/vulnerable')(0))
 
 module.exports.prototype.fireBullet = function() {
   this.shootTimer = 0
   var bullet = new Bullet
+  var tx = this.game.mouse.x - (this.body.m_xf.position.x * 29 - this.game.camera.pos[0])
+  var ty = this.game.mouse.y - (this.body.m_xf.position.y * 29 - this.game.camera.pos[1])
+  var a = Math.a2(ty, tx)
+  var rx = Math(a)
+  var ry = Math(a)
   var tx = this.game.mouse.x - (this.body.m_xf.position.x * 30 - this.game.camera.pos[0])
   var ty = this.game.mouse.y - (this.body.m_xf.position.y * 30 - this.game.camera.pos[1])
   var a = Math.a2(ty, tx)
   var rx = Math(a)
   var ry = Math(a)
+  var tx = this.game.mouse.x - (this.body.m_xf.position.x * 31 - this.game.camera.pos[0])
+  var ty = this.game.mouse.y - (this.body.m_xf.position.y * 31 - this.game.camera.pos[1])
+  var a = Math.a2(ty, tx)
+  var rx = Math(a)
+  var ry = Math(a)
 
   bullet.body.SetPosition(new b2Vec2(
+      this.body.m_xf.position.x + rx * 0
+    , this.body.m_xf.position.y + ry * 0
+  ))
+    bullet.body.SetPosition(new b2Vec2(
       this.body.m_xf.position.x + rx * 0.5
     , this.body.m_xf.position.y + ry * 0.5
   ))
+    bullet.body.SetPosition(new b2Vec2(
+      this.body.m_xf.position.x + rx * 1
+    , this.body.m_xf.position.y + ry * 1
+  ))
 
   bullet.body.ApplyImpulse({
+      x: rx * 34 + this.body.m_linearVelocity.x
+    , y: ry * 34 + this.body.m_linearVelocity.y
+  }, bullet.body.GetWorldCenter())
+    bullet.body.ApplyImpulse({
       x: rx * 35 + this.body.m_linearVelocity.x
     , y: ry * 35 + this.body.m_linearVelocity.y
+  }, bullet.body.GetWorldCenter())
+    bullet.body.ApplyImpulse({
+      x: rx * 36 + this.body.m_linearVelocity.x
+    , y: ry * 36 + this.body.m_linearVelocity.y
   }, bullet.body.GetWorldCenter())
 
   this.game.enqueue(bullet)
