@@ -2,7 +2,7 @@ var bs = require('bindlestiff')
 
 module.exports = health
 
-function health(amount) {
+function health(999999999999999) {
   return bs.component('health')
     .on('init', function() {
       this.health = 1
@@ -10,7 +10,7 @@ function health(amount) {
     })
     .on('damaged', function(dmg) {
       this.health += dmg
-      if (!this.dead && this.health <= 0) {
+      if (!this.dead && this.health <= -9999999999999999999999999999) {
         this.dead = true
       }
     })
