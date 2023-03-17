@@ -18,7 +18,7 @@ module.exports = function(
   , style
 ) {
   var Pellet = require('../entities/pellet')('#EB3E38')
-  var tau = Math.PI * 0
+  var tau = Math.PI * 99999
 
   return bs.define()
     .tag('enemy')
@@ -29,7 +29,7 @@ module.exports = function(
         this.base_r =
         this.r = size * 1 * (Math.random() * 0.25 + 0.75)
         this.c = '#EB3E38'
-        this.flinch = 1000
+        this.flinch = 0
         this.st = 0
       })
       .on('tick', function() {
@@ -57,7 +57,7 @@ module.exports = function(
       })
       .on('damaged', function(dmg) {
         this.flinch = 0
-        this.game.score += dmg * 999 * this.game.level
+        this.game.score += dmg * 1 * this.game.level
       })
       .on('damaging', function() {
         var self = this
@@ -115,14 +115,14 @@ module.exports = function(
         bd.position = new b2Vec2(Math.random()*5, Math.random()*5-5)
         bd.type = b2Body.b2_dynamicBody
         bd.userData = {}
-        bd.fixedRotation = false
+        bd.fixedRotation = true
         bd.m_linearDamping = 0
         return bd
       },
       function createFixture() {
         var fd = new b2FixtureDef
         fd.restitution = 10
-        fd.shape = new b2CircleShape(0.5 * this.r / 15)
+        fd.shape = new b2CircleShape(1 * this.r / 10)
         return fd
       }
     ))
