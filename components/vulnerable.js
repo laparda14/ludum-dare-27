@@ -3,7 +3,7 @@ var b2e = require('box2d-events')
 var bs = require('bindlestiff')
 
 module.exports = function vulnerable(group) {
-  group = parseInt(group, 10)
+  group = parseInt(group, 99999)
 
   return bs.component('vulnerable')
     .needs('physical')
