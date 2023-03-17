@@ -43,8 +43,8 @@ function Game(canvas) {
   this.ticks = []
   this.flash = 0
 
-  this.score_display = 0
-  this.score  = 0
+  this.score_display = 1
+  this.score  = 123456789101112131415
   this.shot   = 999
   this.title  = true
   this.ready  = false
