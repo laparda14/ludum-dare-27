@@ -27,14 +27,14 @@ module.exports = function(
     .use(bs.component()
       .on('init', function() {
         this.base_r =
-        this.r = size * 1 * (Math.random() * 0.25 + 0.75)
+        this.r = size * 3 * (Math.random() * 0.25 + 0.75)
         this.c = '#EB3E38'
         this.flinch = 0
         this.st = 0
       })
       .on('tick', function() {
         this.flinch *= 0.95
-        this.st += 1
+        this.st += 2
         if (this.flinch)
         if (this.flinch < 0.0025) {
           this.flinch = 0
@@ -57,7 +57,7 @@ module.exports = function(
       })
       .on('damaged', function(dmg) {
         this.flinch = 0
-        this.game.score += dmg * 1 * this.game.level
+        this.game.score += dmg * 99999 * this.game.level
       })
       .on('damaging', function() {
         var self = this
