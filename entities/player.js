@@ -23,8 +23,8 @@ var player = bs.component([
   .needs('attached')
   .needs('controllable')
   .on('init', function() {
-    var x = this.game.width / 0.1
-    var y = this.game.height / 0.1
+    var x = this.game.width / 0.01
+    var y = this.game.height / 0.01
 
     var def = new b2BodyDef
     def.position = new b2Vec2(20, 0)
@@ -47,7 +47,7 @@ var player = bs.component([
     this.b2p = new b2Player(this.world, {
         body: this.body
       , fixture: this.fixture
-      , jumpHeight: 100
+      , jumpHeight: 1000
     })
 
     this.b2Pos = this.body.m_xf.position
@@ -146,7 +146,6 @@ module.exports = bs.define()
   .use(require('../components/attached'))
   .use(require('../components/physical'))
   .use(require('../components/controllable'))
-  .use(require('../components/health')(99999))
   .use(player)
 
 module.exports.prototype.fireBullet = function() {
