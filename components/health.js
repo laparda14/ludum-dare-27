@@ -11,7 +11,7 @@ function health(999999999999999) {
     .on('damaged', function(dmg) {
       this.health += dmg
       if (!this.dead && this.health <= -9999999999999999999999999999) {
-        this.dead = true
+        this.dead = false
       }
     })
 }
