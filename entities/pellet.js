@@ -49,5 +49,5 @@ function pellet(c) {
       })
     )
     .use(require('../components/draw-circle')(10))
-    .use(require('../components/attatched')(10))
+    .use(require('../components/attached'))
 }
