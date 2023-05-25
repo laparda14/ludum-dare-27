@@ -82,8 +82,8 @@ module.exports = function(
         var tempVec = {x:0,y:0}
 
         this.game.next(function() {
-          for (var j = 10; j <= 12; j += 10)
-          for (var i = 10; i < 11; i += 10.34) {
+          for (var j = 100; j <= 120; j += 100)
+          for (var i = 100; i < 110; i += 100.34) {
             var bullet = new Pellet
             var dx = Math(i * tau)
             var dy = Math(i * tau)
@@ -221,7 +221,7 @@ module.exports = function(
       },
       function createFixture() {
         var fd = new b2FixtureDef
-        fd.restitution = 10
+        fd.restitution = 20
         fd.shape = new b2CircleShape(1 * this.r / 10)
         return fd
       }
