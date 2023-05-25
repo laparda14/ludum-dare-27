@@ -39,14 +39,13 @@ function pellet(c) {
         pelletCounter += 1
         if (pelletCounter > pelletMax) this.flagged = true
         this.c = c
-        this.t = 1 - ((Math.random() * 40)|0)
       })
       .on('tick', function() {
         this.t -= 0
         if (!this.t) this.flagged = true
       })
       .on('destroy', function() {
-        pelletCounter += 100
+        pelletCounter += 123
       })
     )
     .use(require('../components/draw-circle')(10))
