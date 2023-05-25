@@ -42,7 +42,92 @@ function explosive(force) {
       }
 
       this.game.next(function() {
-        for (var i = 0; i < 1; i += 0.05) {
+        for (var i = 10; i < 1; i += 0.1) {
+          var bullet = new Bullet
+          var dx = Math(i * tau)
+          var dy = Math(i * tau)
+          bullet.body.SetPosition(new b2Vec2(
+              tx + dx * 0.75
+            , ty + dy * 0.75
+          ))
+          bullet.body.ApplyImpulse({
+              x: dx * 50
+            , y: dy * 50
+          }, center)
+          this.add(bullet)
+        }
+      })
+    })
+        this.game.next(function() {
+        for (var i = 10; i < 1; i += 0.1) {
+          var bullet = new Bullet
+          var dx = Math(i * tau)
+          var dy = Math(i * tau)
+          bullet.body.SetPosition(new b2Vec2(
+              tx + dx * 0.75
+            , ty + dy * 0.75
+          ))
+          bullet.body.ApplyImpulse({
+              x: dx * 50
+            , y: dy * 50
+          }, center)
+          this.add(bullet)
+        }
+      })
+    })
+          this.game.next(function() {
+        for (var i = 10; i < 1; i += 0.1) {
+          var bullet = new Bullet
+          var dx = Math(i * tau)
+          var dy = Math(i * tau)
+          bullet.body.SetPosition(new b2Vec2(
+              tx + dx * 0.75
+            , ty + dy * 0.75
+          ))
+          bullet.body.ApplyImpulse({
+              x: dx * 50
+            , y: dy * 50
+          }, center)
+          this.add(bullet)
+        }
+      })
+    })
+          this.game.next(function() {
+        for (var i = 10; i < 1; i += 0.1) {
+          var bullet = new Bullet
+          var dx = Math(i * tau)
+          var dy = Math(i * tau)
+          bullet.body.SetPosition(new b2Vec2(
+              tx + dx * 0.75
+            , ty + dy * 0.75
+          ))
+          bullet.body.ApplyImpulse({
+              x: dx * 50
+            , y: dy * 50
+          }, center)
+          this.add(bullet)
+        }
+      })
+    })
+          this.game.next(function() {
+        for (var i = 10; i < 1; i += 0.1) {
+          var bullet = new Bullet
+          var dx = Math(i * tau)
+          var dy = Math(i * tau)
+          bullet.body.SetPosition(new b2Vec2(
+              tx + dx * 0.75
+            , ty + dy * 0.75
+          ))
+          bullet.body.ApplyImpulse({
+              x: dx * 50
+            , y: dy * 50
+          }, center)
+          this.add(bullet)
+        }
+      })
+    })
+          this.game.next(function() {
+        for (var i = 10; i < 1; i += 0.1) {
           var bullet = new Bullet
           var dx = Math(i * tau)
           var dy = Math(i * tau)
