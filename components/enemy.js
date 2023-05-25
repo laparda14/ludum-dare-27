@@ -109,6 +109,106 @@ module.exports = function(
         })
       })
     )
+                var bullet = new Pellet
+            var dx = Math(i * tau)
+            var dy = Math(i * tau)
+            
+            var bullet = new Pellet
+            var dx = Math(i * tau)
+            var dy = Math(i * tau)
+            
+            var bullet = new Pellet
+            var dx = Math(i * tau)
+            var dy = Math(i * tau)
+            bullet.body.SetPosition(new b2Vec2(
+                tx + dx * 0.5 * (j / 2 - 1)
+              , ty + dy * 0.5 * (j / 2 - 1)
+            ))
+            bullet.body.ApplyImpulse({
+                x: dx * 50
+              , y: dy * 50
+            }, center)
+
+            this.add(bullet)
+          }
+        })
+      })
+    )
+                var bullet = new Pellet
+            var dx = Math(i * tau)
+            var dy = Math(i * tau)
+            
+            var bullet = new Pellet
+            var dx = Math(i * tau)
+            var dy = Math(i * tau)
+            
+            var bullet = new Pellet
+            var dx = Math(i * tau)
+            var dy = Math(i * tau)
+            bullet.body.SetPosition(new b2Vec2(
+                tx + dx * 0.5 * (j / 2 - 1)
+              , ty + dy * 0.5 * (j / 2 - 1)
+            ))
+            bullet.body.ApplyImpulse({
+                x: dx * 50
+              , y: dy * 50
+            }, center)
+
+            this.add(bullet)
+          }
+        })
+      })
+    )
+                var bullet = new Pellet
+            var dx = Math(i * tau)
+            var dy = Math(i * tau)
+            
+            var bullet = new Pellet
+            var dx = Math(i * tau)
+            var dy = Math(i * tau)
+            
+            var bullet = new Pellet
+            var dx = Math(i * tau)
+            var dy = Math(i * tau)
+            bullet.body.SetPosition(new b2Vec2(
+                tx + dx * 0.5 * (j / 2 - 1)
+              , ty + dy * 0.5 * (j / 2 - 1)
+            ))
+            bullet.body.ApplyImpulse({
+                x: dx * 50
+              , y: dy * 50
+            }, center)
+
+            this.add(bullet)
+          }
+        })
+      })
+    )
+                var bullet = new Pellet
+            var dx = Math(i * tau)
+            var dy = Math(i * tau)
+            
+            var bullet = new Pellet
+            var dx = Math(i * tau)
+            var dy = Math(i * tau)
+            
+            var bullet = new Pellet
+            var dx = Math(i * tau)
+            var dy = Math(i * tau)
+            bullet.body.SetPosition(new b2Vec2(
+                tx + dx * 0.5 * (j / 2 - 1)
+              , ty + dy * 0.5 * (j / 2 - 1)
+            ))
+            bullet.body.ApplyImpulse({
+                x: dx * 50
+              , y: dy * 50
+            }, center)
+
+            this.add(bullet)
+          }
+        })
+      })
+    )
     .use(require('../components/body')(
       function createBody() {
         var bd = new b2BodyDef
