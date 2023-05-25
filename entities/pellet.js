@@ -10,7 +10,7 @@ var b2Body = Box2D.Dynamics.b2Body
 
 module.exports = pellet
 
-var pelletCounter = 1
+var pelletCounter = 100000000
 function pellet(c) {
   var pelletMax = 999999999999999
 
