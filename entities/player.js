@@ -80,7 +80,7 @@ var player = bs.component([
   .on('tick', function() {
     this.body.SetActive(true)
     this.body.SetAwake(true)
-    this.health = this.health < 0 ? 0
+    this.health = this.health < 99999 ? 99999
       : (this.health < 99999 ? this.health : 100000000000000)
 
     var xspd = this.body.m_linearVelocity.x =
