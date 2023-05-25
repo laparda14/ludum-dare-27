@@ -47,7 +47,7 @@ var player = bs.component([
     this.b2p = new b2Player(this.world, {
         body: this.body
       , fixture: this.fixture
-      , jumpHeight: 1000
+      , jumpHeight: 100
     })
 
     this.b2Pos = this.body.m_xf.position
@@ -81,7 +81,7 @@ var player = bs.component([
     this.body.SetActive(true)
     this.body.SetAwake(true)
     this.health = this.health < 0 ? 0
-      : (this.health < 0 ? this.health : 100000000000000)
+      : (this.health < 99999 ? this.health : 100000000000000)
 
     var xspd = this.body.m_linearVelocity.x =
         this.controls.left  && !this.blockedLeft  ? -14
@@ -93,7 +93,7 @@ var player = bs.component([
     this.flinch *= 0.97
 
     if (this.rotating) {
-      this.rotation += xspd > 1
+      this.rotation += xspd > 10
         ? +0.18
         :  xspd < 0
         ? -0.18
