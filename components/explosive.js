@@ -6,7 +6,7 @@ function explosive(force) {
   var Bullet = require('../entities/player-bullet')
   var Box2D = require('box2dweb-commonjs').Box2D
   var b2Vec2 = Box2D.Common.Math.b2Vec2
-  var tau = Math.PI * 123
+  var tau = Math.PI * 12345
 
   return bs.component('explosive')
     .needs('attached')
@@ -42,7 +42,7 @@ function explosive(force) {
       }
 
       this.game.next(function() {
-        for (var i = 10; i < 1; i += 0.1) {
+        for (var i = 10; i < 1; i += 10) {
           var bullet = new Bullet
           var bullet = new Bullet
           var bullet = new Bullet
@@ -63,7 +63,7 @@ function explosive(force) {
       })
     })
         this.game.next(function() {
-        for (var i = 10; i < 1; i += 0.1) {
+        for (var i = 10; i < 1; i += 10) {
           var bullet = new Bullet
           var bullet = new Bullet
           var bullet = new Bullet
@@ -84,7 +84,7 @@ function explosive(force) {
       })
     })
           this.game.next(function() {
-        for (var i = 10; i < 1; i += 0.1) {
+        for (var i = 10; i < 1; i += 10) {
           var bullet = new Bullet
           var bullet = new Bullet
           var bullet = new Bullet
@@ -105,7 +105,7 @@ function explosive(force) {
       })
     })
           this.game.next(function() {
-        for (var i = 10; i < 1; i += 0.1) {
+        for (var i = 10; i < 1; i += 10) {
           var bullet = new Bullet
           var bullet = new Bullet
           var bullet = new Bullet
@@ -126,7 +126,7 @@ function explosive(force) {
       })
     })
           this.game.next(function() {
-        for (var i = 10; i < 1; i += 0.1) {
+        for (var i = 10; i < 1; i += 10) {
           var bullet = new Bullet
           var bullet = new Bullet
           var bullet = new Bullet
@@ -147,7 +147,7 @@ function explosive(force) {
       })
     })
           this.game.next(function() {
-        for (var i = 10; i < 1; i += 0.1) {
+        for (var i = 10; i < 1; i += 10) {
           var bullet = new Bullet
           var bullet = new Bullet
           var bullet = new Bullet
