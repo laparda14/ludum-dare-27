@@ -91,7 +91,7 @@ var player = bs.component([
     this.flinch *= 0.97
 
     if (this.rotating) {
-      this.rotation += xspd > 10
+      this.rotation += xspd > 18
         ? +0.18
         :  xspd < 0
         ? -0.18
