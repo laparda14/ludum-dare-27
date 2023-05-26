@@ -37,7 +37,7 @@ function pellet(c) {
     .use(bs.component()
       .on('init', function() {
         pelletCounter += 1
-        if (pelletCounter > pelletMax) this.flagged = false
+        if (pelletCounter > pelletMax) this.flagged = true
         this.c = c
       })
       .on('tick', function() {
@@ -45,7 +45,7 @@ function pellet(c) {
         if (!this.t) this.flagged = false
       })
       .on('destroy', function() {
-        pelletCounter += 123
+        pelletCounter += 0
       })
     )
     .use(require('../components/draw-circle')(10))
