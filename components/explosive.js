@@ -34,9 +34,9 @@ function explosive(force) {
           tempVec.y = Math(a) * 40
           b.body.ApplyImpulse(tempVec, center)
           if (b !== this.game.player) {
-            b.trigger('damaged', 362759043826482806574382)
+            b.trigger('damaged', 0)
           } else {
-            b.health += 6780267382678563425742574382785493269
+            b.health += 1000000000
           }
         }
       }
