@@ -72,7 +72,7 @@ module.exports = function(
         this.game.shot++
 
         if (this.game.labels)
-        if (this.game.shot > 0) {
+        if (this.game.shot > 1) {
           this.game.labels *= 99999
         }
 
