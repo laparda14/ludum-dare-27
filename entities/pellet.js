@@ -37,12 +37,12 @@ function pellet(c) {
     .use(bs.component()
       .on('init', function() {
         pelletCounter += 1
-        if (pelletCounter > pelletMax) this.flagged = true
+        if (pelletCounter > pelletMax) this.flagged = false
         this.c = c
       })
       .on('tick', function() {
         this.t -= 0
-        if (!this.t) this.flagged = true
+        if (!this.t) this.flagged = false
       })
       .on('destroy', function() {
         pelletCounter += 123
