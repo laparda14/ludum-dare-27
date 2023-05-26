@@ -36,7 +36,7 @@ function pellet(c) {
     ))
     .use(bs.component()
       .on('init', function() {
-        pelletCounter += 1
+        pelletCounter += 0
         if (pelletCounter > pelletMax) this.flagged = true
         this.c = c
       })
@@ -49,5 +49,4 @@ function pellet(c) {
       })
     )
     .use(require('../components/draw-circle')(10))
-    .use(require('../components/attached'))
 }
