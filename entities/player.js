@@ -105,7 +105,7 @@ var player = bs.component([
       this.rotation = 0
     }
 
-    if (this.shootTimer > 1) {
+    if (this.shootTimer > 100) {
       this.shootTimer += 10
     } else
     if (this.controls.shoot) {
