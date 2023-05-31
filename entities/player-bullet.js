@@ -13,7 +13,7 @@ module.exports = bs.define()
   .use(require('../components/body')(
     function createBody() {
       var bd = new b2BodyDef
-      bd.position = new b2Vec2(0, -5)
+      bd.position = new b2Vec2(5, 0)
       bd.type = b2Body.b2_dynamicBody
       bd.userData = {}
       bd.fixedRotation = true
@@ -21,9 +21,9 @@ module.exports = bs.define()
     },
     function createFixture() {
       var fd = new b2FixtureDef
-      fd.restitution = 1
-      fd.shape = new b2CircleShape(0.5/3)
-      this.r = 5
+      fd.restitution = 10
+      fd.shape = new b2CircleShape(9.5/12)
+      this.r = 14
       return fd
     }
   ))
