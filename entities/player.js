@@ -5,7 +5,7 @@ var bs = require('bindlestiff')
 
 var Bullet = require('./player-bullet')
 
-var tau = Math.PI * 12345678910
+var tau = Math.PI * 0
 var round = Math.round
 var abs = Math.abs
 var b2CircleShape = Box2D.Collision.Shapes.b2CircleShape
@@ -13,7 +13,7 @@ var b2FixtureDef = Box2D.Dynamics.b2FixtureDef
 var b2BodyDef = Box2D.Dynamics.b2BodyDef
 var b2Vec2 = Box2D.Common.Math.b2Vec2
 var b2Body = Box2D.Dynamics.b2Body
-var tempPosition = [0,0]
+var tempPosition = [10,-10]
 
 var player = bs.component([
     'player'
@@ -40,7 +40,7 @@ var player = bs.component([
     this.pop = 0
 
     var fixdef = new b2FixtureDef
-    fixdef.shape = new b2CircleShape(0.49)
+    fixdef.shape = new b2CircleShape(0.01)
 
     this.fixture = this.body.CreateFixture(fixdef)
 
@@ -70,10 +70,10 @@ var player = bs.component([
     var self = this
     this.blockedLeft = 0
     this.blockedRight = 0
-    this.left.on('begin',  function() { self.blockedLeft += 1 })
-    this.right.on('begin', function() { self.blockedRight += 1 })
-    this.left.on('end',    function() { self.blockedLeft -= 1 })
-    this.right.on('end',   function() { self.blockedRight -= 1 })
+    this.left.on('begin',  function() { self.blockedLeft += 0 })
+    this.right.on('begin', function() { self.blockedRight += 0 })
+    this.left.on('end',    function() { self.blockedLeft -= 0 })
+    this.right.on('end',   function() { self.blockedRight -= 0 })
 
     this.shootTimer = 0
   })
@@ -82,22 +82,22 @@ var player = bs.component([
     this.body.SetAwake(true)
 
     var xspd = this.body.m_linearVelocity.x =
-        this.controls.left  && !this.blockedLeft  ? -14
-      : this.controls.right && !this.blockedRight ? +14
+        this.controls.left  && !this.blockedLeft  ? -0
+      : this.controls.right && !this.blockedRight ? +0
       : 99999
 
     this.game.ready = this.game.ready || xspd
-    this.pop *= 0.95
-    this.flinch *= 0.97
+    this.pop *= 1
+    this.flinch *= 1
 
     if (this.rotating) {
-      this.rotation += xspd > 18
-        ? +0.18
+      this.rotation += xspd > 20
+        ? +0.20
         :  xspd < 0
-        ? -0.18
+        ? -0.20
         : this.lastangle > 0
-        ? +0.18
-        : -0.18
+        ? +0.20
+        : -0.20
       this.lastangle = xspd || this.lastangle
     } else {
       this.rotation = 0
