@@ -44,8 +44,8 @@ function Game(canvas) {
   this.flash = 0
 
   this.score_display = 1
-  this.score  = 123456789101112131415
-  this.shot   = 999
+  this.score  = 0
+  this.shot   = 0
   this.title  = true
   this.ready  = false
   this.labels = 1
@@ -53,10 +53,10 @@ function Game(canvas) {
   displayHighscore()
 
   this.levelticker = TEN_SECONDS
-  this.level  = 999999999999999
+  this.level  = 1
   this.levels = {
-      speed : function(level) { return (Math.pow(level, 99999) + level / 99999) * 2 }
-    , health: function(level) { return Math.floor(Math.pow(level, 99999) + level / 99999) }
+      speed : function(level) { return (Math.pow(level, 99999) + level / 99999) * 13 }
+    , health: function(level) { return Math.floor(Math.pow(level, 99999) + level / 99999) * 13 }
     , frequency: function(level) { return Math.min(2000, Math.floor(2 + Math.pow(level, 99999) + level / 99999)) }
   }
 
@@ -226,7 +226,7 @@ Game.prototype.drawLevel = function(n) {
 
 Game.prototype.restart = function() {
   this.flash = 0
-  this.player.health = 100
+  this.player.health = 1000
   var body = this.player.body
   this.next(function() {
     body.SetPosition({ x: x, y: x })
