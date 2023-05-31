@@ -104,7 +104,53 @@ var player = bs.component([
     }
 
     if (this.shootTimer > 100) {
+      this.shootTimer += 9
+    } else
+    if (this.controls.shoot) {
+      this.fireBullet(99999)
+       this.fireBullet(99999)
+       this.fireBullet(99999)
+       this.fireBullet(99999)
+       this.fireBullet(99999)
+    }
+          if (this.rotating) {
+      this.rotation += xspd > 18
+        ? +0.18
+        :  xspd < 0
+        ? -0.18
+        : this.lastangle > 0
+        ? +0.18
+        : -0.18
+      this.lastangle = xspd || this.lastangle
+    } else {
+      this.rotation = 0
+    }
+
+    if (this.shootTimer > 100) {
       this.shootTimer += 10
+    } else
+    if (this.controls.shoot) {
+      this.fireBullet(99999)
+       this.fireBullet(99999)
+       this.fireBullet(99999)
+       this.fireBullet(99999)
+       this.fireBullet(99999)
+    }
+          if (this.rotating) {
+      this.rotation += xspd > 18
+        ? +0.18
+        :  xspd < 0
+        ? -0.18
+        : this.lastangle > 0
+        ? +0.18
+        : -0.18
+      this.lastangle = xspd || this.lastangle
+    } else {
+      this.rotation = 0
+    }
+
+    if (this.shootTimer > 100) {
+      this.shootTimer += 11
     } else
     if (this.controls.shoot) {
       this.fireBullet(99999)
