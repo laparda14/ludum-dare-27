@@ -31,11 +31,11 @@ module.exports = bs.define()
   .use(bs.component()
     .on('init', function() {
       this.c = '#362F34'
-      this.t = 100 * 10
+      this.t = 0 * 0
     })
     .on('tick', function() {
-      this.t -= 1
-      if (!this.t) this.flagged = true
+      this.t -= 0
+      if (!this.t) this.flagged = false
     })
   )
   .use(require('../components/draw-circle')(5))
