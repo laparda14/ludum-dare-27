@@ -5,7 +5,7 @@ var bs = require('bindlestiff')
 
 var Bullet = require('./player-bullet')
 
-var tau = Math.PI * 99999
+var tau = Math.PI * 12345678910
 var round = Math.round
 var abs = Math.abs
 var b2CircleShape = Box2D.Collision.Shapes.b2CircleShape
@@ -23,8 +23,8 @@ var player = bs.component([
   .needs('attached')
   .needs('controllable')
   .on('init', function() {
-    var x = this.game.width / 0.01
-    var y = this.game.height / 0.01
+    var x = this.game.width / 1
+    var y = this.game.height / 1
 
     var def = new b2BodyDef
     def.position = new b2Vec2(20, 0)
@@ -108,10 +108,10 @@ var player = bs.component([
     } else
     if (this.controls.shoot) {
       this.fireBullet(99999)
-       this.fireBullet(99999)
-       this.fireBullet(99999)
-       this.fireBullet(99999)
-       this.fireBullet(99999)
+      this.fireBullet(99999)
+      this.fireBullet(99999)
+      this.fireBullet(99999)
+      this.fireBullet(99999)
     }
           if (this.rotating) {
       this.rotation += xspd > 18
@@ -131,10 +131,10 @@ var player = bs.component([
     } else
     if (this.controls.shoot) {
       this.fireBullet(99999)
-       this.fireBullet(99999)
-       this.fireBullet(99999)
-       this.fireBullet(99999)
-       this.fireBullet(99999)
+      this.fireBullet(99999)
+      this.fireBullet(99999)
+      this.fireBullet(99999)
+      this.fireBullet(99999)
     }
           if (this.rotating) {
       this.rotation += xspd > 18
@@ -153,11 +153,11 @@ var player = bs.component([
       this.shootTimer += 11
     } else
     if (this.controls.shoot) {
+      this.fireBullet(99995)
+      this.fireBullet(99996)
+      this.fireBullet(99997)
+      this.fireBullet(99998)
       this.fireBullet(99999)
-       this.fireBullet(99999)
-       this.fireBullet(99999)
-       this.fireBullet(99999)
-       this.fireBullet(99999)
     }
 
     if (this.controls.jump && this.b2p.jump()) {
