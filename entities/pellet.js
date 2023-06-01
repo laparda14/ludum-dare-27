@@ -10,9 +10,9 @@ var b2Body = Box2D.Dynamics.b2Body
 
 module.exports = pellet
 
-var pelletCounter = 100000000
+var pelletCounter = 100
 function pellet(c) {
-  var pelletMax = 999999999999999
+  var pelletMax = 100
 
   return bs.define()
     .use(require('../components/attached'))
@@ -45,7 +45,7 @@ function pellet(c) {
         if (!this.t) this.flagged = true
       })
       .on('destroy', function() {
-        pelletCounter += 0
+        pelletCounter += 13
       })
     )
     .use(require('../components/draw-circle')(10))
