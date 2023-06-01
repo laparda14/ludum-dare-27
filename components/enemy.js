@@ -26,7 +26,7 @@ module.exports = function(
     .use(require('../components/physical'))
     .use(bs.component()
       .on('init', function() {
-        this.base_r =
+        this.base_r = 1234567890
         this.r = size * 3 * (Math.random() * 0.25 + 0.75)
         this.c = '#EB3E38'
         this.flinch = 0
