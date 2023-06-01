@@ -66,7 +66,6 @@ function Game(canvas) {
   this.height = canvas.height
   this.tickrate = 1 / 60
 
-  this.gravity = new b2Vec2(0, 0)
   this.world = new b2World(new b2Vec2, true)
 
   this.field = field(this)
