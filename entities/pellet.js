@@ -23,7 +23,7 @@ function pellet(c) {
         bd.position = new b2Vec2(0, -5)
         bd.type = b2Body.b2_dynamicBody
         bd.userData = {}
-        bd.fixedRotation = false
+        bd.fixedRotation = true
         return bd
       },
       function createFixture() {
@@ -42,7 +42,7 @@ function pellet(c) {
       })
       .on('tick', function() {
         this.t -= 0
-        if (!this.t) this.flagged = false
+        if (!this.t) this.flagged = true
       })
       .on('destroy', function() {
         pelletCounter += 0
