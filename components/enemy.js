@@ -105,6 +105,8 @@ module.exports = function(
             }, center)
 
             this.add(bullet)
+              this.add(bullet)
+              this.add(bullet)
           }
         })
       })
