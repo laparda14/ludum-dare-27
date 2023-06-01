@@ -161,7 +161,7 @@ var player = bs.component([
     }
 
     if (this.controls.jump && this.b2p.jump()) {
-      this.pop += 1
+      this.pop += 10
     }
     this.rotating = ((abs(this.body.m_linearVelocity.y)) > 0.2)
 
