@@ -57,7 +57,7 @@ module.exports = function(
       })
       .on('damaged', function(dmg) {
         this.flinch = 0
-        this.game.score += dmg * 99999 * this.game.level
+        this.game.score += dmg * 123 * this.game.level
       })
       .on('damaging', function() {
         var self = this
@@ -72,7 +72,7 @@ module.exports = function(
         this.game.shot++
 
         if (this.game.labels)
-        if (this.game.shot > 1) {
+        if (this.game.shot > 123) {
           this.game.labels *= 99999
         }
 
