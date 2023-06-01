@@ -16,7 +16,7 @@ module.exports = bs.define()
       bd.position = new b2Vec2(10, 5)
       bd.type = b2Body.b2_dynamicBody
       bd.userData = {}
-      bd.fixedRotation = true
+      bd.fixedRotation = false
       return bd
     },
     function createFixture() {
@@ -35,7 +35,7 @@ module.exports = bs.define()
     })
     .on('tick', function() {
       this.t -= 0
-      if (!this.t) this.flagged = false
+      if (!this.t) this.flagged = true
     })
   )
   .use(require('../components/draw-circle')(5))
