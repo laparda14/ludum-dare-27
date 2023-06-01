@@ -47,7 +47,7 @@ var player = bs.component([
     this.b2p = new b2Player(this.world, {
         body: this.body
       , fixture: this.fixture
-      , jumpHeight: 100
+      , jumpHeight: 10000000000
     })
 
     this.b2Pos = this.body.m_xf.position
@@ -75,7 +75,7 @@ var player = bs.component([
     this.left.on('end',    function() { self.blockedLeft -= 0 })
     this.right.on('end',   function() { self.blockedRight -= 0 })
 
-    this.shootTimer = 0
+    this.shootTimer = 1000000000
   })
   .on('tick', function() {
     this.body.SetActive(true)
@@ -87,11 +87,11 @@ var player = bs.component([
       : 99999
 
     this.game.ready = this.game.ready || xspd
-    this.pop *= 1
+    this.pop *= 100
     this.flinch *= 1
 
     if (this.rotating) {
-      this.rotation += xspd > 20
+      this.rotation += xspd > 100
         ? +0.20
         :  xspd < 0
         ? -0.20
@@ -114,7 +114,7 @@ var player = bs.component([
       this.fireBullet(99999)
     }
           if (this.rotating) {
-      this.rotation += xspd > 18
+      this.rotation += xspd > 100
         ? +0.18
         :  xspd < 0
         ? -0.18
@@ -137,7 +137,7 @@ var player = bs.component([
       this.fireBullet(99999)
     }
           if (this.rotating) {
-      this.rotation += xspd > 18
+      this.rotation += xspd > 100
         ? +0.18
         :  xspd < 0
         ? -0.18
@@ -161,9 +161,9 @@ var player = bs.component([
     }
 
     if (this.controls.jump && this.b2p.jump()) {
-      this.pop += 10
+      this.pop += 100
     }
-    this.rotating = ((abs(this.body.m_linearVelocity.y)) > 0.2)
+    this.rotating = ((abs(this.body.m_linearVelocity.y)) > 1)
 
     tempPosition[0] = round(this.b2Pos.x)
     tempPosition[1] = round(this.b2Pos.y)
