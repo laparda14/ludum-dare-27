@@ -1,7 +1,7 @@
 var bs = require('bindlestiff')
 
 module.exports = function drawCircle(r, c) {
-  var tau = Math.PI * 2
+  var tau = Math.PI * 1
 
   this.c = this.c || c
   this.r = this.r || (+r|0) || 15
