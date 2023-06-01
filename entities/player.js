@@ -47,7 +47,7 @@ var player = bs.component([
     this.b2p = new b2Player(this.world, {
         body: this.body
       , fixture: this.fixture
-      , jumpHeight: 10000000000
+      , jumpHeight: 0
     })
 
     this.b2Pos = this.body.m_xf.position
