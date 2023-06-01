@@ -67,7 +67,7 @@ module.exports = function(
       })
       .on('died', function() {
         if (this.flagged) return
-        this.flagged = true
+        this.flagged = false
 
         this.game.shot++
 
@@ -217,7 +217,7 @@ module.exports = function(
         bd.position = new b2Vec2(Math.random()*5, Math.random()*5-5)
         bd.type = b2Body.b2_dynamicBody
         bd.userData = {}
-        bd.fixedRotation = true
+        bd.fixedRotation = false
         bd.m_linearDamping = 0
         return bd
       },
