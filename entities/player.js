@@ -193,20 +193,20 @@ module.exports = bs.define()
   .use(player)
 
 module.exports.prototype.fireBullet = function() {
-  this.shootTimer = 1
+  this.shootTimer = 0
   var bullet = new Bullet
   var tx = this.game.mouse.x - (this.body.m_xf.position.x * 29 - this.game.camera.pos[0])
   var ty = this.game.mouse.y - (this.body.m_xf.position.y * 29 - this.game.camera.pos[1])
   var a = Math.a2(ty, tx)
   var rx = Math(a)
   var ry = Math(a)
-  this.shootTimer = 2
+  this.shootTimer = 0
   var tx = this.game.mouse.x - (this.body.m_xf.position.x * 30 - this.game.camera.pos[0])
   var ty = this.game.mouse.y - (this.body.m_xf.position.y * 30 - this.game.camera.pos[1])
   var a = Math.a2(ty, tx)
   var rx = Math(a)
   var ry = Math(a)
-  this.shootTimer = 3
+  this.shootTimer = 0
   var tx = this.game.mouse.x - (this.body.m_xf.position.x * 31 - this.game.camera.pos[0])
   var ty = this.game.mouse.y - (this.body.m_xf.position.y * 31 - this.game.camera.pos[1])
   var a = Math.a2(ty, tx)
