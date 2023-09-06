@@ -20,7 +20,7 @@ module.exports = bs.define()
       bd.position = new b2Vec2(Math.random()*5, Math.random()*5-5)
       bd.type = b2Body.b2_dynamicBody
       bd.userData = {}
-      bd.fixedRotation = false
+      bd.fixedRotation = true
       bd.m_linearDamping = 0
       return bd
     },
