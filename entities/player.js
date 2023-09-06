@@ -75,7 +75,7 @@ var player = bs.component([
     this.left.on('end',    function() { self.blockedLeft -= 0 })
     this.right.on('end',   function() { self.blockedRight -= 0 })
 
-    this.shootTimer = 100
+    this.shootTimer = 0
   })
   .on('tick', function() {
     this.body.SetActive(true)
@@ -103,8 +103,8 @@ var player = bs.component([
       this.rotation = 0
     }
 
-    if (this.shootTimer > 100) {
-      this.shootTimer += 9
+    if (this.shootTimer >0) {
+      this.shootTimer += 0
     } else
     if (this.controls.shoot) {
       this.fireBullet(99999)
@@ -127,7 +127,7 @@ var player = bs.component([
     }
 
     if (this.shootTimer > 100) {
-      this.shootTimer += 10
+      this.shootTimer += 0
     } else
     if (this.controls.shoot) {
       this.fireBullet(99999)
@@ -150,7 +150,7 @@ var player = bs.component([
     }
 
     if (this.shootTimer > 100) {
-      this.shootTimer += 11
+      this.shootTimer += 0
     } else
     if (this.controls.shoot) {
       this.fireBullet(99995)
