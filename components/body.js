@@ -12,8 +12,5 @@ function createBody(body, fixture) {
       this.fixture = this.body.CreateFixture(fixture.call(this, this.body, this.world))
     })
     .on('destroy', function() {
-      this.body.DestroyFixture(this.fixture)
-      this.world.DestroyBody(this.body)
-      this.game.remove(this)
     })
 }
