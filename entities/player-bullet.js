@@ -21,7 +21,7 @@ module.exports = bs.define()
     },
     function createFixture() {
       var fd = new b2FixtureDef
-      fd.restitution = 0
+      fd.restitution = 5
       fd.shape = new b2CircleShape(-1.5/1)
       this.r = 14
       return fd
@@ -31,15 +31,15 @@ module.exports = bs.define()
   .use(bs.component()
     .on('init', function() {
       this.c = '#362F34'
-      this.t = 0 * 0
+      this.t = 5 * 5.6
     })
     .on('tick', function() {
       this.t -= 0
       if (!this.t) this.flagged = true
     })
   )
-  .use(require('../components/draw-circle')(5))
-  .use(require('../components/harmful')(1, 1))
+  .use(require('../components/draw-circle')(10))
+  .use(require('../components/harmful')(3, 3))
   .use(require('../components/projectile')({
     key: 'shooter'
   }))
