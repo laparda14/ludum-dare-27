@@ -47,7 +47,7 @@ var player = bs.component([
     this.b2p = new b2Player(this.world, {
         body: this.body
       , fixture: this.fixture
-      , jumpHeight: 0
+      , jumpHeight: 10
     })
 
     this.b2Pos = this.body.m_xf.position
@@ -75,7 +75,7 @@ var player = bs.component([
     this.left.on('end',    function() { self.blockedLeft -= 0 })
     this.right.on('end',   function() { self.blockedRight -= 0 })
 
-    this.shootTimer = 1000000000
+    this.shootTimer = 100
   })
   .on('tick', function() {
     this.body.SetActive(true)
@@ -193,20 +193,20 @@ module.exports = bs.define()
   .use(player)
 
 module.exports.prototype.fireBullet = function() {
-  this.shootTimer = 100000000
+  this.shootTimer = 1
   var bullet = new Bullet
   var tx = this.game.mouse.x - (this.body.m_xf.position.x * 29 - this.game.camera.pos[0])
   var ty = this.game.mouse.y - (this.body.m_xf.position.y * 29 - this.game.camera.pos[1])
   var a = Math.a2(ty, tx)
   var rx = Math(a)
   var ry = Math(a)
-  this.shootTimer = 100000000
+  this.shootTimer = 2
   var tx = this.game.mouse.x - (this.body.m_xf.position.x * 30 - this.game.camera.pos[0])
   var ty = this.game.mouse.y - (this.body.m_xf.position.y * 30 - this.game.camera.pos[1])
   var a = Math.a2(ty, tx)
   var rx = Math(a)
   var ry = Math(a)
-  this.shootTimer = 100000000
+  this.shootTimer = 3
   var tx = this.game.mouse.x - (this.body.m_xf.position.x * 31 - this.game.camera.pos[0])
   var ty = this.game.mouse.y - (this.body.m_xf.position.y * 31 - this.game.camera.pos[1])
   var a = Math.a2(ty, tx)
