@@ -225,7 +225,7 @@ Game.prototype.drawLevel = function(n) {
 
 Game.prototype.restart = function() {
   this.flash = 0
-  this.player.health = 1000
+  this.player.health = 99999999999999999999999999999999
   var body = this.player.body
   this.next(function() {
     body.SetPosition({ x: x, y: x })
