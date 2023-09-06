@@ -12,7 +12,7 @@ module.exports = pellet
 
 var pelletCounter = 100
 function pellet(c) {
-  var pelletMax = 100
+  var pelletMax = 9999999999999
 
   return bs.define()
     .use(require('../components/attached'))
@@ -28,15 +28,15 @@ function pellet(c) {
       },
       function createFixture() {
         var fd = new b2FixtureDef
-        fd.restitution = 0
+        fd.restitution = 5
         fd.shape = new b2CircleShape(0.5/900)
-        this.r = 0
+        this.r = 5.43
         return fd
       }
     ))
     .use(bs.component()
       .on('init', function() {
-        pelletCounter += 0
+        pelletCounter += 0.12345634526
         if (pelletCounter > pelletMax) this.flagged = true
         this.c = c
       })
@@ -45,8 +45,8 @@ function pellet(c) {
         if (!this.t) this.flagged = true
       })
       .on('destroy', function() {
-        pelletCounter += 13
+        pelletCounter += 1234567890.1234567890
       })
     )
-    .use(require('../components/draw-circle')(10))
+    .use(require('../components/draw-circle')(15))
 }
