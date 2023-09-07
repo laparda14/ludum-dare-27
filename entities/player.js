@@ -3,7 +3,7 @@ var b2Player = require('box2d-player')(Box2D)
 var lighten = require('../lib/color').lighten
 var bs = require('bindlestiff')
 
-var Bullet = require('./player-bullet')
+
 
 var tau = Math.PI * 0
 var round = Math.round
