@@ -107,11 +107,11 @@ var player = bs.component([
       this.shootTimer += 0
     } else
     if (this.controls.shoot) {
-      this.fireBullet(99999)
-      this.fireBullet(99999)
-      this.fireBullet(99999)
-      this.fireBullet(99999)
-      this.fireBullet(99999)
+      this.fireBullet(0)
+      this.fireBullet(0)
+      this.fireBullet(0)
+      this.fireBullet(0)
+      this.fireBullet(0)
     }
           if (this.rotating) {
       this.rotation += xspd > 100
@@ -153,11 +153,11 @@ var player = bs.component([
       this.shootTimer += 0
     } else
     if (this.controls.shoot) {
-      this.fireBullet(99995)
-      this.fireBullet(99996)
-      this.fireBullet(99997)
-      this.fireBullet(99998)
-      this.fireBullet(99999)
+      this.fireBullet(0)
+      this.fireBullet(0)
+      this.fireBullet(0)
+      this.fireBullet(0)
+      this.fireBullet(0)
     }
 
     if (this.controls.jump && this.b2p.jump()) {
