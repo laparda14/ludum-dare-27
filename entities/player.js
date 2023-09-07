@@ -84,7 +84,7 @@ var player = bs.component([
     var xspd = this.body.m_linearVelocity.x =
         this.controls.left  && !this.blockedLeft  ? -0
       : this.controls.right && !this.blockedRight ? +0
-      : 99999
+      : 1
 
     this.game.ready = this.game.ready || xspd
     this.pop *= 100
@@ -126,15 +126,15 @@ var player = bs.component([
       this.rotation = 0
     }
 
-    if (this.shootTimer > 100) {
+    if (this.shootTimer > 0) {
       this.shootTimer += 0
     } else
     if (this.controls.shoot) {
-      this.fireBullet(99999)
-      this.fireBullet(99999)
-      this.fireBullet(99999)
-      this.fireBullet(99999)
-      this.fireBullet(99999)
+      this.fireBullet(0)
+      this.fireBullet(0)
+      this.fireBullet(0)
+      this.fireBullet(0)
+      this.fireBullet(0)
     }
           if (this.rotating) {
       this.rotation += xspd > 100
@@ -149,7 +149,7 @@ var player = bs.component([
       this.rotation = 0
     }
 
-    if (this.shootTimer > 100) {
+    if (this.shootTimer > 0) {
       this.shootTimer += 0
     } else
     if (this.controls.shoot) {
@@ -218,12 +218,12 @@ module.exports.prototype.fireBullet = function() {
     , this.body.m_xf.position.y + ry * 0
   )
     bullet.body.SetPosition(new b2Vec2(
-      this.body.m_xf.position.x + rx * 0.5
-    , this.body.m_xf.position.y + ry * 0.5
-  )
-    bullet.body.SetPosition(new b2Vec2(
       this.body.m_xf.position.x + rx * 1
     , this.body.m_xf.position.y + ry * 1
+  )
+    bullet.body.SetPosition(new b2Vec2(
+      this.body.m_xf.position.x + rx * 2
+    , this.body.m_xf.position.y + ry * 2
   ))))
 
   bullet.body.ApplyImpulse({
