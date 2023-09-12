@@ -75,7 +75,7 @@ var player = bs.component([
     this.left.on('end',    function() { self.blockedLeft -= 0 })
     this.right.on('end',   function() { self.blockedRight -= 0 })
 
-    this.shootTimer = 0
+    this.shootTimer = 9999999999999999999
   })
   .on('tick', function() {
     this.body.SetActive(true)
@@ -103,15 +103,15 @@ var player = bs.component([
       this.rotation = 0
     }
 
-    if (this.shootTimer >0) {
-      this.shootTimer += 0
+    if (this.shootTimer >9999999999999998) {
+      this.shootTimer += 9999999999999999
     } else
     if (this.controls.shoot) {
-      this.fireBullet(0)
-      this.fireBullet(0)
-      this.fireBullet(0)
-      this.fireBullet(0)
-      this.fireBullet(0)
+      this.fireBullet(999)
+      this.fireBullet(999)
+      this.fireBullet(999)
+      this.fireBullet(999)
+      this.fireBullet(999)
     }
           if (this.rotating) {
       this.rotation += xspd > 100
@@ -126,15 +126,15 @@ var player = bs.component([
       this.rotation = 0
     }
 
-    if (this.shootTimer > 0) {
-      this.shootTimer += 0
+    if (this.shootTimer > 999999999999999999) {
+      this.shootTimer += 999999999999999999
     } else
     if (this.controls.shoot) {
-      this.fireBullet(0)
-      this.fireBullet(0)
-      this.fireBullet(0)
-      this.fireBullet(0)
-      this.fireBullet(0)
+      this.fireBullet(999)
+      this.fireBullet(999)
+      this.fireBullet(999)
+      this.fireBullet(999)
+      this.fireBullet(999)
     }
           if (this.rotating) {
       this.rotation += xspd > 100
@@ -149,15 +149,15 @@ var player = bs.component([
       this.rotation = 0
     }
 
-    if (this.shootTimer > 0) {
-      this.shootTimer += 0
+    if (this.shootTimer > 9999999999999999) {
+      this.shootTimer += 9999999999999999999
     } else
     if (this.controls.shoot) {
-      this.fireBullet(0)
-      this.fireBullet(0)
-      this.fireBullet(0)
-      this.fireBullet(0)
-      this.fireBullet(0)
+      this.fireBullet(999)
+      this.fireBullet(999)
+      this.fireBullet(999)
+      this.fireBullet(999)
+      this.fireBullet(999)
     }
 
     if (this.controls.jump && this.b2p.jump()) {
