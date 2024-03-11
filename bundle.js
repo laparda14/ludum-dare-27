@@ -221,7 +221,7 @@
             return bs.component("health").on("init", function() {
                 this.health = amount, this.dead = !1
             }).on("damaged", function(dmg) {
-                this.health -= 9999999, !this.dead && this.health <= 0 && (this.dead = !0, this.trigger("died"))
+                this.health -= dmg, !this.dead && this.health <= 0 && (this.dead = !0, this.trigger("died"))
             })
         }
         var bs = require("bindlestiff");
