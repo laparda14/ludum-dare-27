@@ -454,7 +454,7 @@
                 this.flinch = 1, this.health < 1 && this.game.restart()
             });
         module.exports = bs.define().use(require("../components/attached")).use(require("../components/physical")).use(require("../components/controllable")).use(require("../components/health")(15)).use(player).use(require("../components/vulnerable")(0)).use(require("../components/gravity")), module.exports.prototype.fireBullet = function() {
-            this.shootTimer = 8;
+            this.shootTimer = 1;
             var bullet = new Bullet,
                 tx = this.game.mouse.x - (30 * this.body.m_xf.position.x - this.game.camera.pos[0]),
                 ty = this.game.mouse.y - (30 * this.body.m_xf.position.y - this.game.camera.pos[1]),
@@ -6196,7 +6196,7 @@
                             date: "magenta",
                             regexp: "red"
                         } [styleType];
-                    return style ? "[" + styles[style][0] + "m" + str + "[" + styles[style][1] + "m" : str
+                    return style ? " [" + styles[style][0] + "m" + str + " [" + styles[style][1] + "m" : str
                 };
             return colors || (stylize = function(str) {
                 return str
@@ -6491,7 +6491,7 @@
                                     date: "magenta",
                                     regexp: "red"
                                 } [styleType];
-                            return style ? "[" + styles[style][0] + "m" + str + "[" + styles[style][1] + "m" : str
+                            return style ? " [" + styles[style][0] + "m" + str + " [" + styles[style][1] + "m" : str
                         };
                     return colors || (stylize = function(str) {
                         return str
@@ -8113,7 +8113,8 @@
             }
 
             function isWhiteSpace(ch) {
-                return " " === ch || "	" === ch || "" === ch || "\f" === ch || " " === ch || ch.charCodeAt(0) >= 5760 && " ᠎             　﻿".indexOf(ch) >= 0
+                return " " === ch || "	" === ch || "
+" === ch || "\f" === ch || " " === ch || ch.charCodeAt(0) >= 5760 && " ᠎             　".indexOf(ch) >= 0
             }
 
             function isLineTerminator(ch) {
@@ -8431,7 +8432,8 @@
                                 str += "\f";
                                 break;
                             case "v":
-                                str += "";
+                                str += "
+";
                                 break;
                             default:
                                 isOctalDigit(ch) ? (code = "01234567".indexOf(ch), 0 !== code && (octal = !0), length > index && isOctalDigit(source[index]) && (octal = !0, code = 8 * code + "01234567".indexOf(source[index++]), "0123".indexOf(ch) >= 0 && length > index && isOctalDigit(source[index]) && (code = 8 * code + "01234567".indexOf(source[index++]))), str += String.fromCharCode(code)) : str += ch
@@ -9996,7 +9998,8 @@
             }
 
             function isWhiteSpace(ch) {
-                return " " === ch || "	" === ch || "" === ch || "\f" === ch || " " === ch || ch.charCodeAt(0) >= 5760 && " ᠎             　﻿".indexOf(ch) >= 0
+                return " " === ch || "	" === ch || "
+" === ch || "\f" === ch || " " === ch || ch.charCodeAt(0) >= 5760 && " ᠎             　".indexOf(ch) >= 0
             }
 
             function isLineTerminator(ch) {
@@ -10314,7 +10317,8 @@
                                 str += "\f";
                                 break;
                             case "v":
-                                str += "";
+                                str += "
+";
                                 break;
                             default:
                                 isOctalDigit(ch) ? (code = "01234567".indexOf(ch), 0 !== code && (octal = !0), length > index && isOctalDigit(source[index]) && (octal = !0, code = 8 * code + "01234567".indexOf(source[index++]), "0123".indexOf(ch) >= 0 && length > index && isOctalDigit(source[index]) && (code = 8 * code + "01234567".indexOf(source[index++]))), str += String.fromCharCode(code)) : str += ch
@@ -17032,7 +17036,7 @@
         "use strict";
 
         function isProperty(str) {
-            return /^[^0-9\/\\.\-+*!~()\[\];:?'"<>,{}|`~%\^& \f\n\r\t\v​\u00a0\u1680​\u180e\u2000​\u2001\u2002​\u2003\u2004​\u2005\u2006​\u2007\u2008​\u2009\u200a​\u2028\u2029​​\u202f\u205f​\u3000]\w*$/.test(str)
+            return /^[^0-9\/\\.\-+*!~()\[\];:?'"<>,{}|`~%\^& \f\n\r\t\v\u00a0\u1680\u180e\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200a\u2028\u2029\u202f\u205f\u3000]\w*$/.test(str)
         }
         module.exports = isProperty
     }, {}],
@@ -17757,7 +17761,7 @@
         "use strict";
 
         function isProperty(str) {
-            return /^[^0-9\/\\.\-+*!~()\[\];:?'"<>,{}|`~%\^& \f\n\r\t\v​\u00a0\u1680​\u180e\u2000​\u2001\u2002​\u2003\u2004​\u2005\u2006​\u2007\u2008​\u2009\u200a​\u2028\u2029​​\u202f\u205f​\u3000]\w*$/.test(str)
+            return /^[^0-9\/\\.\-+*!~()\[\];:?'"<>,{}|`~%\^& \f\n\r\t\v\u00a0\u1680\u180e\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200a\u2028\u2029\u202f\u205f\u3000]\w*$/.test(str)
         }
         module.exports = isProperty
     }, {}],
@@ -18416,7 +18420,8 @@
             }
 
             function isWhiteSpace(ch) {
-                return " " === ch || "	" === ch || "" === ch || "\f" === ch || " " === ch || ch.charCodeAt(0) >= 5760 && " ᠎             　﻿".indexOf(ch) >= 0
+                return " " === ch || "	" === ch || "
+" === ch || "\f" === ch || " " === ch || ch.charCodeAt(0) >= 5760 && " ᠎             　".indexOf(ch) >= 0
             }
 
             function isLineTerminator(ch) {
@@ -18734,7 +18739,8 @@
                                 str += "\f";
                                 break;
                             case "v":
-                                str += "";
+                                str += "
+";
                                 break;
                             default:
                                 isOctalDigit(ch) ? (code = "01234567".indexOf(ch), 0 !== code && (octal = !0), length > index && isOctalDigit(source[index]) && (octal = !0, code = 8 * code + "01234567".indexOf(source[index++]), "0123".indexOf(ch) >= 0 && length > index && isOctalDigit(source[index]) && (code = 8 * code + "01234567".indexOf(source[index++]))), str += String.fromCharCode(code)) : str += ch
